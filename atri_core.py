@@ -143,7 +143,7 @@ for p in trucksinterm:
 
     # DO NOT CHANGE ORDER OF FOLLOWING LOOP OPERATIONS UNLESS YOU WANT TROUBLE
     #  Will be appending values in the order of the column names in the above list 'tripcolumns' so they
-    #  match for the array that will be turned into a dataframe.  Bad order, info goes in wrong problem, bad news bears.  Proceed with caution
+    #  match for the array that will be turned into a dataframe.  Bad order, info goes in wrong column, bad news bears.  Proceed with caution
     for x in segmentlist:
         values = []  # empty list that will be filled with calculated values and then appended to master list which will be passed to np.array
         tripframe = workdf.loc[workdf['SegmentID'] == x].copy()  # create a trip frame.   Will calculate stuff like trip time from this frame
