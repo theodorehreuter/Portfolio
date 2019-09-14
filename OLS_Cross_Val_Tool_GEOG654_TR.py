@@ -118,7 +118,7 @@ try:
     arcpy.AddMessage("Your total RMSE is %f" % (RMSE)) #add message outputting total errors
     
 except ExtensionError: #determine what error message will be output if spatial analyst extension is not available
-    arcpy.AddError("The extensions you need for this tool are unavailable.  You've been blocked!  No soup for you!")
+    arcpy.AddError("The extensions you need for this tool are unavailable.  You've been blocked like Lebron blocked Curry.")
 except Exception, e: #other outside, python errors
     print "Error: " + str(e) #prints python related error   
     print arcpy.GetMessages() #prints arcpy related errors
