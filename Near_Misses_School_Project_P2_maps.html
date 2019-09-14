@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Cataloging near misses and cycling safety in DC">
+        <meta name="author" content="THeo Reuter">
+        <link rel="icon" href="../../../../favicon.ico">
+    
+        <title>DC Near Misses</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+        <!-- Custom styles for this template -->
+        <link href="css/carousel.css" rel="stylesheet">
+        <link href = "css/final.css" rel="stylesheet">
+        <link href = "css/finalstyles.css" rel = "styleshet">
+        <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+        <script src="https://js.arcgis.com/4.10/"></script>
+        <script>
+            require([
+                "esri/views/MapView",
+                "esri/WebMap",
+                "esri/widgets/Legend"
+            ], function(
+                    MapView, WebMap, Legend
+                ) {
+            var webmap = new WebMap({
+                portalItem: { // autocasts as new PortalItem()
+                id: "54e6c14fe9734b80b65242d55b3e1471"
+            }
+            });
+            var view = new MapView({
+                map: webmap,
+                container: "viewDiv"
+            });
+            view.when(function() {
+            // get the first layer in the collection of operational layers in the WebMap
+            // when the resources in the MapView have loaded.
+            var featureLayer = webmap.layers.getItemAt(0);
+
+            var legend = new Legend({
+                view: view,
+                layerInfos: [{
+                layer: featureLayer,
+                title: "Near Miss Survey Points"
+                }]
+            });
+
+            // Add widget to the bottom right corner of the view
+            view.ui.add(legend, "top-right");
+            });   
+            });
+        </script>
+        <script>
+            require([
+                "esri/views/MapView",
+                "esri/WebMap",
+                "esri/widgets/Legend"
+            ], function(
+                    MapView, WebMap, Legend
+                ) {
+            var webmap2 = new WebMap({
+                portalItem: { // autocasts as new PortalItem()
+                id: "459f9d3fb4ac4acbbf817c73f033b48d"
+            }
+            });
+            var view2 = new MapView({
+                map: webmap2,
+                container: "viewDiv2"
+            });
+            view2.when(function() {
+            // get the first layer in the collection of operational layers in the WebMap
+            // when the resources in the MapView have loaded.
+            var featureLayer = webmap2.layers.getItemAt(0);
+
+            var legend2 = new Legend({
+                view: view2,
+            });
+
+            // Add widget to the bottom right corner of the view
+            view2.ui.add(legend2, "top-right");
+            });   
+                
+            });
+        </script>
+        <script>
+            require([
+                "esri/views/MapView",
+                "esri/WebMap",
+                "esri/widgets/LayerList",
+            ], function(
+                    MapView, WebMap, LayerList
+                ) {
+            var webmap3 = new WebMap({
+                portalItem: { // autocasts as new PortalItem()
+                id: "f43dd94938e74826938ec730eaec5849"
+            }
+            });
+            var view3 = new MapView({
+                map: webmap3,
+                container: "viewDiv3"
+            });
+            view3.when(function() {
+            var layerList3 = new LayerList({
+            view: view3
+            });
+
+            // Add widget to the top right corner of the view
+            view3.ui.add(layerList3, "top-right");
+            });
+
+            });
+        </script>
+        <style>
+            html, body {
+                padding: 0;
+                margin: 0;
+                height: 100%;
+                width: 100%;
+                position: absolute
+            }
+            /* #viewDiv {
+                padding: 5px;
+                margin: auto;
+                height: 100%;
+                width: auto;
+                position: absolute; 
+            } */
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <a class="navbar-brand" href="#">Cycling Near Misses in DC</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="maps.html">Maps</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="about.html">About Me</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="story.html">Story Map</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    
+    
+    
+    <div id = "content">
+        <div class="container" style="text-align:center;padding:1em;background-image:linear-gradient(red,yellow,green);border-bottom:5px;border-bottom-style:solid;border-bottom-color:black;">
+            <h3> MAPS
+        </div>  
+        <div class="container">
+            <div class = "row" id = "mapcontainer">
+                <div class="col-md-8">
+                    <div id="viewDiv"></div>
+                </div>
+                <div class = "col-md-4">
+                    <h3> Near Misses</h3>
+                    <p> This map displays every near miss incident that has been entered into the survey.  Currently the map is weighted toward my
+                        own riding patterns as my experiences dominate the dataset currently, but as others flesh out the dataset, this map will expand 
+                        to cover the DMV.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="padding:50px;margin-top:50px;">
+            <h3> Here is another map.  Basic density analysis was run on the survey points.</h3>
+        </div>
+        <div  class="container">
+            <div class="row" id = "mapcontainer2">
+                <div class="col-md-4">
+                    <h3> Near Misses Density</h3>
+                    <p> This map is designed to display the density of the number of near misses per square mile within a given area.  Areas
+                        of darker colors represent areas where there are higher recorded concentrations of near misses events.  Currently the
+                        dataset is weighted heavily towards my own riding patterns.  As the dataset is fleshed out, areas of particular interest
+                        to policymakers and advocay groups will reveal themselves.  Due to some unknown errors I am troubleshooting with ArcGIS Online,
+                        this desnity map is not representative of the most up to date data, but we'll fix that soon! </p>
+                </div>
+                <div class = "col-md-8">
+                    <div id="viewDiv2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="padding:50px;margin-top:50px;text-align:center;">
+            <h3> Finally we have a third map with selected relevant data collected by the DC government </h3>
+        </div>
+        <div  class="container">
+            <div class="row" id = "mapcontainer3">
+                <div class = "col-md-8">
+                    <div id="viewDiv3"></div>
+                </div>
+                <div class="col-md-4">
+                    <h3> DC Government Bike Data</h3>
+                    <p> This map displays a few layers of bike-centric data collected by the DC Government.  There is a layer comprised of 
+                        bike crash fatalities from 2011-2018, 9 total with 3 alone happening in 2018.  There is a layer representing all crashes involving bicycles
+                        from 2011-2018 recorded by the DC Police Department, over 2800 incidents.  And finally there is a layer representing bike data from Vison Zero,
+                        where locals reported bicycle related issues with the DC transportation system.  Clearly there is much work to be done, with
+                        bike issues stretching from corner to corner of the city.  With such data on hand, the DC government has the information it needs
+                        to move agressively to protect cyclists on the road, such as enforcing more diligently laws designed to protect cyclists.
+                    </p>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; Theodore Reuter, MPSGIS @ University of Maryland, College Park &middot; 703-585-7452 &middot; theodore.reuter@gmail.com</a></p>
+    </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="popper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <!--Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    </body>
+</html>
