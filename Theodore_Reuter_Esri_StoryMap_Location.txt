@@ -2,5 +2,7 @@ Esri Public Storymap
 
 Created as part of GEOG677 - Internet GIS as part of the MS GIS program at University of Maryland College Park
 
+Hiking The Appalachian Trail in The Great Smoky Mountains National Park
+
 Public Link:
 https://umdmpsgis.maps.arcgis.com/apps/MapTour/index.html?appid=19dcecc399764ae88303ae4d4c19bcea
