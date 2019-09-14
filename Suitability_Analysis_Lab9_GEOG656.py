@@ -121,7 +121,7 @@ except UnitError: #determine what error message will be output if the units inpu
 except WeightError: #determine what error message will be output if the weights selected do not match the appropriate conditions
     arcpy.AddError("Arrgh!  The weights need to be between 0-1 and add up to 1.  Read the directions!  You didn't read them?  Well put down the bottle, take a few deep breaths and try again.  Jeez...")
 except ExtensionError: #determine what error message will be output if spatial analyst extension is not available
-    arcpy.AddError("The extensions you need for this tool are unavailable.  You've been blocked!  No soup for you!")
+    arcpy.AddError("The extensions you need for this tool are unavailable.  You've been blocked like Lebron blocked Curry.")
 except Exception, e: #other outside, python errors
     print "Error: " + str(e) #prints python related error   
     print arcpy.GetMessages() #prints arcpy related errors
