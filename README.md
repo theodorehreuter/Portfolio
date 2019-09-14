@@ -1,4 +1,4 @@
 # Portfolio
-This is my github portfolio to to demonstrate a variety of projects and scripts and code I've written, during grad school and for work, to illustrate my GIS capabilities and work.
+This is the github portfolio of Theodore Reuter, and seeks to represent my technical GIS abilities in a range of areas, from spatial analysis and spatial statistics (poster/slides in powerpoint format for class), python scripts, and website samples, and other various pieces of GIS work.
 
 As a note, some scripts were written with python 2.7.  I have migrated and now write all my scripts in python 3.
